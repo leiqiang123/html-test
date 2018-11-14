@@ -1,0 +1,49 @@
+<style>
+    *{margin: 0; padding: 0;}
+    body{ background-color: #cccccc;}
+    .res{ text-decoration: none; margin-top: 50px; margin-left: 150px;}
+    ul{ list-style-type: none;}
+    li{ float: left; margin-left: 10px;}
+    .fixclear:after{ content: ""; display: block; overflow: hidden; clear: both; height: 0;}
+    img{ width: 100px;;}
+    p{ margin-left: 150px; }
+</style>
+<body>
+    <ul id="xiaoTu" class="res fixclear">
+        <li>
+            <a href="./imgs/2/1-small.jpg" title="AAAA">
+                <img src="./imgs/2/1-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./imgs/2/2-small.jpg" title="BBBB">
+                <img src="./imgs/2/2-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./imgs/2/3-small.jpg" title="CCCC">
+                <img src="./imgs/2/3-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="./imgs/2/4-small.jpg" title="DDDD">
+                <img src="./imgs/2/4-small.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+    <img id="daTu" src="./imgs/2/placeholder.png" style="width: 450px;" alt="">
+    <p>AAA</p>
+</body>
+
+<script>
+    let as = document.getElementsByTagName("a");
+    let p = document.getElementsByTagName("p")[0];
+    let daTu = document.getElementById("daTu");
+    for(let i = 0; i<as.length; i++){
+        as[i].onclick = ()=>{
+            daTu.src = as[i].href;
+            p.innerHTML = as[i].title;
+            return false;
+        }
+    }
+</script>

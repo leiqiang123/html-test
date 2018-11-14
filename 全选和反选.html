@@ -1,0 +1,69 @@
+<style>
+    *{margin: 0;padding: 0;}
+    .wrap{  width: 300px;  margin: 100px auto;  }
+    table{  border: 1px solid red;  border-collapse: collapse;
+        border-spacing: 0px;  width: 300px;
+    }
+    th,td{
+        border: 1px solid gold;  color: red;
+        padding: 10px;  text-align: center;
+    }
+    th{
+        background: skyblue;  font-weight: bold;  font-size: 16px;
+    }
+    td{  font-size: 14px;  }
+
+</style>
+<div class="wrap">
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="theadInp">
+                </th>
+                <th>菜名</th>
+                <th>饭店</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+             <tr>
+                 <td>
+                     <input type="checkbox">
+                 </td>
+                 <td>abcdefg</td>
+                 <td>Hello</td>
+             </tr>
+             <tr>
+                 <td>
+                     <input type="checkbox">
+                 </td>
+                 <td>abcdefg</td>
+                 <td>Hello</td>
+             </tr>
+             <tr>
+                 <td>
+                     <input type="checkbox">
+                 </td>
+                 <td>abcdefg</td>
+                 <td>Hello</td>
+             </tr>
+             <tr>
+                 <td>
+                     <input type="checkbox">
+                 </td>
+                 <td>abcdefg</td>
+                 <td>Hello</td>
+             </tr>
+            </tbody>
+        </table>
+    </div>
+
+<script>
+    let theadInp = document.getElementById("theadInp")
+    let input = document.getElementsByTagName("input");
+    theadInp.onclick = function(){
+        for (let i = 0; i < input.length; i++) {
+            input[i].checked = this.checked;
+        }
+    }
+</script>

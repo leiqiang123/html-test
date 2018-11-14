@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        li{ list-style-type: none;}
+        div{ position: relative; width: 200px; height: 100px; background-color: yellow; margin: 50px auto; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul>
+            <li>111111111111</li>
+            <li>222222222222</li>
+            <li>333333333333</li>
+            <li>444444444444</li>
+            <li>555555555555</li>
+            <li>666666666666</li>
+            <li>777777777777</li>
+            <li>888888888888</li>
+            <li>999999999999</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    function List(id){
+        this.div = document.getElementById(id)
+        this.ul = this.div.getElementsByTagName("ul")[0]
+        this.height = this.ul.offsetHeight;
+        this.init();
+        this.start()
+    }
+    List.prototype.init = function(){
+        this.ul.innerHTML += this.ul.innerHTML;
+        this.ul.style.position = "absolute"
+        this.ul.style.top = 0;
+    }
+    List.prototype.start = function(){
+        var that = this;
+        setInterval(function(){
+            that.top = Math.abs(parseInt(that.ul.style.top))
+            if(that.top >= that.height){
+                that.ul.style.top = 0;
+            }else{
+                that.ul.style.top = parseInt(that.ul.style.top) - 2 + "px";
+            }
+        },100)
+    }
+    new List("tab")
+
+</script>
+<!-- <script>
+    var div = document.getElementById("tab")
+    var ul = document.getElementsByTagName("ul")[0]
+    ul.innerHTML += ul.innerHTML;
+    var height = ul.offsetHeight;
+    ul.style.position = "absolute"
+    ul.style.top = 0;
+    function gundong(){
+        var top = Math.abs(parseInt(ul.style.top))
+        if(top >= height){
+            ul.style.top = 0;
+        }else{
+            ul.style.top = parseInt(ul.style.top) - 2 + "px";
+        }
+    }
+    setInterval(gundong,100);
+</script> -->
+</html>

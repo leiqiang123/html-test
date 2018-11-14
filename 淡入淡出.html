@@ -1,0 +1,38 @@
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: gold;
+    }
+</style>
+<div id="box"></div>
+<button>淡入</button>
+<button>淡出</button>
+
+<script>
+    let btn = document.getElementsByTagName("button");
+    let div = document.getElementById("box");
+    var t1 = null;
+    btn[1].onclick = ()=>{
+        clearInterval(t1);
+        let opc = 1;
+        t1 = setInterval(()=>{
+            opc -= 0.05;
+            div.style.opacity = opc;
+            if(opc == 0){
+            clearInterval(t1);
+        }
+        },100)
+    }
+    btn[0].onclick = ()=>{
+        clearInterval(t1);
+        let opc = 0;
+        t1 = setInterval(()=>{
+            opc += 0.05;
+            div.style.opacity = opc;
+            if(opc == 1){
+            clearInterval(t1);
+            }
+        },100)
+    }
+</script>

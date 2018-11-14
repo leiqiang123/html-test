@@ -1,0 +1,31 @@
+<style>
+    #box{
+         width: 200px;height: 200px;background-color: red;
+         position: absolute; left: 100px; top: 200px; cursor: pointer;
+    }
+</style>
+
+<div id="box"></div>
+
+
+<script>
+    let div = document.getElementById("box");
+    div.onmousedown = (ev)=>{
+        var oEvent = ev || window.event;
+        var x,y;
+        x = oEvent.clientX - div.offsetLeft;
+        y = oEvent.clientY - div.offsetTop;
+        document.onmousemove = (ev)=>{
+            var oEvent = ev || window.event;
+            var l,t;
+            l = oEvent.clientX - x;
+            t = oEvent.clientY - y;
+            div.style.left = l + "px";
+            div.style.top = t + "px";
+        }
+        document.onmouseup = ()=>{
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>

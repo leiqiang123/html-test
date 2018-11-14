@@ -1,0 +1,45 @@
+
+<style>
+    *{ padding: 0; margin: 0;}
+    li{ list-style-type: none;}
+    body{ height: 2000px;}
+    #nav{ border: 1px solid red; text-align: center;background-color: #333333;}
+    .normal{ margin-top: 380px;}
+    .fix{ position: fixed; left: 0; right: 0; top: 0;}
+    #nav li{ display: inline-block; height: 50PX; line-height: 50px;}
+    a{ padding: 0 40px; font-size: 20px; color: #fff; text-decoration: none;}
+</style>
+
+<body>
+    <ul id="nav" class="normal">
+        <li>
+            <a href="">numb1</a>
+        </li>
+        <li>
+            <a href="">numb2</a>
+        </li>
+        <li>
+            <a href="">numb3</a>
+        </li>
+        <li>
+            <a href="">numb4</a>
+        </li>
+        <li>
+            <a href="">numb5</a>
+        </li>
+    </ul>
+</body>
+
+<script>
+    let nav = document.getElementById("nav");
+    let navtop = nav.offsetTop;
+    window.onscroll = ()=>{
+        let st = document.body.scrollTop || document.documentElement.scrollTop;
+        if( st >= navtop){
+            nav.className = "fix"
+        }else{
+            nav.className = "normal"
+        }
+            // st >= navtop ? nav.className = "fix" : nav.className = "normal"
+    }
+</script>

@@ -1,0 +1,29 @@
+<style>
+    ul{ width: 1000px; margin: 100px auto; list-style-type: none;}
+    li{ font-size: 20px; height: 30px; line-height: 30px; }
+</style>
+
+<ul>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+    <li>Hello,world!</li>
+</ul>
+
+<script>
+    let lis = document.getElementsByTagName("li");
+    for(let i = 0; i < lis.length; i++){
+        if(i%2){
+            lis[i].style.backgroundColor = "red";
+        }
+    }
+</script>

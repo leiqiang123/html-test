@@ -1,0 +1,28 @@
+<body>
+    <h1 title="hello" id="h1">hello</h1>
+    <button id="btn">控制</button>
+    <div id="box" style="width: 200px; height: 200px; background-color: yellow;"></div>
+</body>
+
+<script>
+    let h1 = document.getElementsByTagName("h1")[0];
+    let btn = document.getElementById("btn");
+    let box = document.getElementById("box");
+    let isshow = true;
+    // console.log(h1.getAttribute("title"));
+    // console.log(h1.getAttribute("id"))
+    h1.setAttribute("class","h12")
+    h1.innerHTML += " world";
+    h1.style.backgroundColor = "yellow"
+    h1.style.color = "red"
+    h1.style.fontSize = "35px"
+    btn.onclick = ()=>{
+        if(isshow){
+            box.style.display = "none";
+            isshow = false;
+        } else {
+            box.style.display = "block";
+            isshow = true;
+        }
+    }
+</script>

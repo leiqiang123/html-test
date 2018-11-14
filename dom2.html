@@ -1,0 +1,34 @@
+<style>
+    *{ margin: 0; padding: 0;}
+    li{ list-style-type: none;}
+    #list li{ width: 80%; border-bottom: 2px solid red; margin: 0 auto; line-height: 40px; text-align: center;}
+</style>
+<div>
+    <button id="add">添加</button>
+    <hr>
+    <input id="input" type="text" placeholder="请输入要删除的行数">
+    <button id="del">删除</button>
+    <ul id="list"></ul>
+</div>
+
+
+<script>
+    let oAdd = document.getElementById("add");
+    let oDel = document.getElementById("del");
+    let oInput = document.getElementById("input");
+    let oList = document.getElementById("list");
+    oAdd.onclick = ()=>{
+        let oLi = document.createElement("li");
+        oLi.innerHTML = oInput.value;
+        oList.appendChild(oLi);
+        oInput.value = "";
+    }
+    oDel.onclick = () =>{
+        let num = oInput.value;
+        if(num){
+            let li = document.getElementsByTagName("li");
+            oList.removeChild(li[num-1]);
+        }else{ alert("请输入行数")}
+    }
+
+</script>

@@ -1,0 +1,45 @@
+
+
+
+
+
+<script>
+
+    // function fo(w,h){
+    //     var f = {}
+    //     f.width = w;
+    //     f.height = h;
+    //     return f;
+    // }
+
+
+
+    NBAPlayer.prototype.say = function(){
+        console.log(`我是${this.name},今年${this.age},身高是${this.weight}`)
+    }
+
+    function NBAPlayer(name,age,weight){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+    
+    function MVP(name,age,weight,year){
+        NBAPlayer.call(this,name,age,weight);
+        this.year = year;
+    }
+    MVP.prototype.say = function(){
+        console.log(`我是${this.name},今年${this.age},身高是${this.weight},是${this.year}年的MVP`)
+    }
+    // var a = new MVP("科比",33,198,2018); a.say();
+    var b = new NBAPlayer("科比",33,198); b.say();
+    var c = Object.create(b);
+    c.name = "姚明"
+    console.log(c)
+    c.say()
+    console.log(b)
+    console.log(c.__proto__ == b)
+
+    
+    
+</script>

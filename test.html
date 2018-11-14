@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .classA{ color:blue; width: 100px; height: 100px; background-color: #f00; border-bottom: 1px solid #f1f1f1}
+        .classB{ color:red; width: 100px; height: 100px; background-color: blue; border-top: 1px solid #f1f1f1; position: relative;}
+        .classC{ background-color: #ff0; width: 50px; height: 50px; float: left; position: absolute; 
+            /* top: 50%; left: 50%; */
+            /* margin-top: -25px; margin-left: -25px; */
+            /* top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto; */
+            }
+    </style>
+    <!-- <script type="text/javascript">
+        
+    </script> -->
+</head>
+<body>
+    <div class="classA"></div>
+    <div class="classB">
+        <div class="classC"></div>
+    </div>
+    <!-- <form action="">
+        <input type="text" value="65487">
+        <input type="text" value="65487">
+        <input type="text" value="65487">
+    </form>
+    <form action="">
+        <input type="text" value="65487">
+        <input type="text" value="65487">
+        <input type="text" value="65487">
+    </form> -->
+    <button onclick="close1()">关闭</button>
+</body>
+<script>
+    // var arr0 = [1,2,4,1,6,8,2,1]
+    // function Sort(arr) {
+    //     var obj = {}
+    //     var rtArr = []
+    //     for(var i = 0; i < arr.length; i++){
+    //         if(!obj[arr[i]]){
+    //             rtArr.push(arr[i])
+    //             obj[arr[i]] = 1
+    //         }
+    //     }
+    //     return rtArr
+    // }
+    // console.log(Sort(arr0))
+    window.status = '已选中该文本框'
+    var form = document.getElementsByTagName('form')
+    console.log(form)
+    function close1() {
+        console.log(1)
+        window.close()
+    }
+    // console.log(document.forms)
+    // console.log(document.forms[0].elements[0].value)
+    
+</script>
+</html>

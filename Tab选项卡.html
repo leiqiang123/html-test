@@ -1,0 +1,70 @@
+
+<head>
+<style>
+    *{ margin: 0; padding: 0;}
+    li{ list-style-type: none;}
+    body{ background-color: lavender;}
+    #all{ width: 500px; margin: 20px auto;}
+    #nav{ height: 50px; background: gold;}
+    #nav li{ width: 20%; height: 50px; line-height: 50px; float: left; text-align: center; color: #fff; border-bottom: 2px solid transparent; cursor: pointer;}
+    .content{ width: 500px; height: 150px; background-color: #fff; line-height: 160px; text-align: center;}
+</style>
+</head>
+<body>
+    <div id="all">
+        <ul id="nav">
+            <li style="border-color: red;">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+            <li>tab4</li>
+            <li>tab5</li>
+        </ul>
+        <div class="content">tab1的内容</div>
+        <div class="content" style="display: none;">tab2的内容</div>
+        <div class="content" style="display: none;">tab3的内容</div>
+        <div class="content" style="display: none;">tab4的内容</div>
+        <div class="content" style="display: none;">tab5的内容</div>
+    </div>
+</body>
+
+<script>
+    function Tab(tabid){
+        this.tab = document.getElementById(tabid)
+        this.lis = this.tab.getElementsByTagName("li")
+        this.divs = this.tab.getElementsByTagName("div")
+        var that = this;
+        for(let i = 0; i <this.lis.length; i++){
+            
+            this.lis[i].onclick = function(){
+                that.click(i);
+            }
+        }
+    }
+    Tab.prototype.click = function(index){
+        for(let j = 0; j < this.lis.length; j++){
+                this.lis[j].style.borderColor = "transparent";
+                this.divs[j].style.display = "none";
+            }
+            this.lis[index].style.borderColor = "red";
+            this.divs[index].style.display = "block"
+    }
+    new Tab("all");
+    
+
+</script>
+
+<!-- <script>
+    let lis = document.getElementsByTagName("li");
+    let divs = document.getElementsByClassName("content");
+    for(let i = 0; i < lis.length; i++){
+        // lis[i].index = i;
+        lis[i].onclick = function(){
+            for(let j = 0; j < lis.length; j++){
+                lis[j].style.borderColor = "transparent";
+                divs[j].style.display = "none";
+            }
+            this.style.borderColor = "red";
+            divs[i].style.display = "block"
+        }
+    }
+</script> -->

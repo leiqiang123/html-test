@@ -1,0 +1,69 @@
+<script>
+    // NBAPlayer.prototype.say = function(){
+    //     console.log(`我是${this.name},今年${this.age},身高是${this.weight}`)
+    // }
+
+    // function NBAPlayer(name,age,weight){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.weight = weight;
+    // }
+
+
+
+
+    class NBAPlayer {
+        constructor(name, age, weight) {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+        }
+        say() {
+            console.log(`我是${this.name},今年${this.age},身高是${this.weight}`)
+        }
+    }
+
+    class MVP extends NBAPlayer {
+        constructor(name, age, weight, year) {
+            super(name, age, weight)
+            this.year = year
+        }
+        ShowMVP() {
+            console.log(`我是${this.name},今年${this.age},身高是${this.weight},${this.year}年获得MVP`)
+        }
+    }
+    var a = new NBAPlayer("詹姆斯", 34, 206); a.say();
+    var b = new MVP("库里", 33, 181, 2017); b.ShowMVP()
+
+
+
+// class GetC{
+//     constructor(w,h){
+//         this.height = h;
+//         this.width = w;
+//     }
+//     getc(){
+//         return 2*(this.height+this.width);
+//     }
+// }
+
+// class GetA extends GetC{
+//     constructor(w,h){
+//         super(w,h);
+//     }
+//     geta(){
+//         return this.width*this.height;
+//     }
+// }
+
+// var a = new GetC(2,3);  console.log(a.getc())
+
+// var b = new GetA(3,3);  console.log(b.geta())
+
+
+
+
+
+
+
+</script>

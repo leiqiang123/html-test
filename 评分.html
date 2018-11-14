@@ -1,0 +1,27 @@
+<p>
+    <span>评分：</span>
+    <img src="./images/rank_1.gif" alt=""><img src="./images/rank_2.gif" alt=""><img src="./images/rank_1.gif" alt=""><img src="./images/rank_2.gif" alt=""><img src="./images/rank_1.gif" alt=""><img src="./images/rank_2.gif" alt=""><img src="./images/rank_1.gif" alt=""><img src="./images/rank_2.gif" alt=""><img src="./images/rank_1.gif" alt=""><img src="./images/rank_2.gif" alt=""><img src="./images/rank_3.gif" alt=""><img src="./images/rank_4.gif" alt=""><img src="./images/rank_3.gif" alt=""><img src="./images/rank_4.gif" alt=""><img src="./images/rank_3.gif" alt=""><img src="./images/rank_4.gif" alt=""><img src="./images/rank_3.gif" alt=""><img src="./images/rank_4.gif" alt=""><img src="./images/rank_3.gif" alt=""><img src="./images/rank_4.gif" alt="">
+</p>
+
+<script>
+    let imgs = document.getElementsByTagName("img");
+    for(let i = 0; i < imgs.length; i++){
+        imgs[i].onmouseover = ()=>{
+            for(let j = 0; j <= i; j++){
+                var str = imgs[j].src;
+                var str = str.replace("rank_3","rank_1");
+                var str = str.replace("rank_4","rank_2");
+                imgs[j].src = str;
+            }
+            if(i == imgs.length-1){
+            } else{
+                for(let k = i; k < imgs.length; k++){
+                    var str = imgs[k].src;
+                    var str = str.replace("rank_1","rank_3");
+                    var str = str.replace("rank_2","rank_4");
+                    imgs[k].src = str;
+                }
+            }
+        }
+    }
+</script>
